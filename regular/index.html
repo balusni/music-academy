@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKSTAR 기타 아카데미 | 일렉 기타 실용 음악 학원</title>
+
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'pretendard': ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1e40af',
+                        'primary-light': '#3b82f6',
+                        'primary-dark': '#1e3a8a',
+                        'accent': '#b45309',
+                        'accent-light': '#d97706',
+                        'warm': '#78350f',
+                        'cream': '#fefce8',
+                        'light-bg': '#f8fafc',
+                        'light-card': '#ffffff',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'gentle-float': 'gentleFloat 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        gentleFloat: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #1e40af, #3b82f6);
+            border-radius: 4px;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-gold {
+            background: linear-gradient(135deg, #b45309, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card Styles */
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        .card-shadow:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid #1e40af;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: #1e40af;
+            color: white;
+        }
+
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e40af' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        /* Scroll Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section Divider */
+        .section-divider {
+            height: 4px;
+            width: 60px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            border-radius: 2px;
+        }
+
+        /* Feature Icon */
+        .feature-icon {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 1px solid #bfdbfe;
+        }
+
+        /* Timeline Line */
+        .timeline-line {
+            background: linear-gradient(180deg, #1e40af, #3b82f6, #1e40af);
+        }
+
+        /* Level Badge */
+        .level-badge {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+        }
+    </style>
+</head>
+<body class="bg-light-bg text-gray-800 font-pretendard">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <span class="text-3xl">🎸</span>
+                    </div>
+                    <span class="text-2xl font-black gradient-text">ROCKSTAR</span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary transition-colors duration-300 font-medium">
+                        소개
+                    </a>
+                    <a href="#instructors" class="text-gray-600 hover:text-primary transition-colors duration-300 font-medium">
+                        강사진
+                    </a>
+                    <a href="#curriculum" class="text-gray-600 hover:text-primary transition-colors duration-300 font-medium">
+                        커리큘럼
+                    </a>
+                    <a href="#gallery" class="text-gray-600 hover:text-primary transition-colors duration-300 font-medium">
+                        갤러리
+                    </a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary transition-colors duration-300 font-medium">
+                        문의
+                    </a>
+                </div>
+
+                <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full font-bold text-white">
+                    무료 상담
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative pt-20">
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <div class="animate-fade-in">
+                <span class="inline-block px-4 py-2 bg-primary/10 backdrop-blur-sm rounded-full text-sm mb-6 border border-primary/20 text-primary font-medium">
+                    2026년 신규 수강생 모집 중
+                </span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 animate-slide-up text-gray-800">
+                <span class="gradient-text">당신의 꿈을</span><br>
+                <span class="inline-block">기타로</span>
+                <span class="gradient-text">연주하세요</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-600 mb-10 animate-slide-up" style="animation-delay: 0.2s;">
+                일렉 기타의 모든 것, <span class="text-primary font-bold">ROCKSTAR</span>에서 시작하세요
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.4s;">
+                <a href="#curriculum" class="btn-primary px-8 py-4 rounded-full font-bold text-lg text-white">
+                    커리큘럼 보기 →
+                </a>
+                <a href="#contact" class="btn-outline px-8 py-4 rounded-full font-bold text-lg text-primary">
+                    무료 체험 신청
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-8 mt-16 animate-slide-up" style="animation-delay: 0.6s;">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black gradient-text">500+</div>
+                    <div class="text-gray-500 mt-2 font-medium">수료생</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black gradient-text">15년</div>
+                    <div class="text-gray-500 mt-2 font-medium">교육 경력</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black gradient-text">98%</div>
+                    <div class="text-gray-500 mt-2 font-medium">만족도</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-gentle-float">
+            <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center pt-2">
+                <div class="w-1.5 h-3 bg-primary rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm mb-4 font-medium">ABOUT US</span>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800">
+                    왜 <span class="gradient-text">ROCKSTAR</span>인가요?
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    15년간 축적된 노하우와 체계적인 커리큘럼으로<br>
+                    당신의 기타 실력을 한 단계 끌어올립니다
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-6 card-shadow scroll-reveal border border-gray-100" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center text-3xl mb-4 animate-gentle-float">
+                        🎯
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">1:1 맞춤 레슨</h3>
+                    <p class="text-gray-600">개인의 수준과 목표에 맞춘 완벽한 개인 맞춤형 커리큘럼을 제공합니다.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-6 card-shadow scroll-reveal border border-gray-100" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center text-3xl mb-4 animate-gentle-float" style="animation-delay: 1s;">
+                        🎸
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">최신 장비 완비</h3>
+                    <p class="text-gray-600">Fender, Gibson, Marshall 등 프리미엄 장비로 최고의 연습 환경을 제공합니다.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-6 card-shadow scroll-reveal border border-gray-100" style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center text-3xl mb-4 animate-gentle-float" style="animation-delay: 2s;">
+                        🏆
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">현역 뮤지션 강사</h3>
+                    <p class="text-gray-600">실제 무대 경험이 풍부한 현역 프로 뮤지션이 직접 지도합니다.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-6 card-shadow scroll-reveal border border-gray-100" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center text-3xl mb-4 animate-gentle-float" style="animation-delay: 3s;">
+                        🎤
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">정기 공연 기회</h3>
+                    <p class="text-gray-600">분기별 정기 공연과 버스킹을 통해 실전 무대 경험을 쌓을 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section id="instructors" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm mb-4 font-medium">INSTRUCTORS</span>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800">
+                    최고의 <span class="gradient-text">강사진</span>
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    현역에서 활동하는 프로 뮤지션들이<br>
+                    여러분의 꿈을 함께 만들어갑니다
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Instructor 1 -->
+                <div class="scroll-reveal">
+                    <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-gray-100">
+                        <div class="h-64 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center relative overflow-hidden group">
+                            <div class="text-8xl transition-transform duration-500 group-hover:scale-110">👨‍🎤</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-medium">헤드 강사</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">김록스타</h3>
+                            <p class="text-gray-600 mb-4">
+                                • 버클리 음대 졸업<br>
+                                • 전 YG 세션 기타리스트<br>
+                                • 15년 레슨 경력
+                            </p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">락</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">메탈</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">블루스</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-gray-100">
+                        <div class="h-64 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center relative overflow-hidden group">
+                            <div class="text-8xl transition-transform duration-500 group-hover:scale-110">👩‍🎤</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full font-medium">수석 강사</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">이멜로디</h3>
+                            <p class="text-gray-600 mb-4">
+                                • MI 음대 졸업<br>
+                                • 현 인디밴드 기타리스트<br>
+                                • 10년 레슨 경력
+                            </p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">펑크</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">얼터너티브</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructor 3 -->
+                <div class="scroll-reveal" style="animation-delay: 0.4s;">
+                    <div class="bg-white rounded-3xl overflow-hidden card-shadow border border-gray-100">
+                        <div class="h-64 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center relative overflow-hidden group">
+                            <div class="text-8xl transition-transform duration-500 group-hover:scale-110">🧑‍🎤</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium">전임 강사</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">박리프</h3>
+                            <p class="text-gray-600 mb-4">
+                                • 서울예대 졸업<br>
+                                • 다수 OST 참여<br>
+                                • 8년 레슨 경력
+                            </p>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">재즈</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">퓨전</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">R&B</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm mb-4 font-medium">CURRICULUM</span>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800">
+                    단계별 <span class="gradient-text">커리큘럼</span>
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    초보자부터 프로까지, 체계적인 단계별 교육으로<br>
+                    당신의 실력을 끌어올립니다
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-1 timeline-line hidden lg:block"></div>
+
+                <!-- Level 1 -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-12 scroll-reveal">
+                    <div class="lg:w-1/2 lg:text-right lg:pr-12">
+                        <div class="bg-white rounded-2xl p-6 card-shadow border border-gray-100">
+                            <span class="inline-block px-4 py-2 bg-blue-50 text-primary rounded-full text-sm mb-4 font-medium">LEVEL 1</span>
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">입문반</h3>
+                            <p class="text-gray-600 mb-4">기타를 처음 접하는 분들을 위한 기초 과정</p>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>• 기타 구조 이해 및 기본 자세</li>
+                                <li>• 기초 코드 (C, G, D, Em, Am)</li>
+                                <li>• 기본 스트로크 패턴</li>
+                                <li>• 쉬운 곡 3곡 완성</li>
+                            </ul>
+                            <div class="mt-4 text-primary font-bold">3개월 과정</div>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 level-badge rounded-full flex items-center justify-center text-xl font-bold z-10 text-white hidden lg:flex shadow-lg">1</div>
+                    <div class="lg:w-1/2 lg:pl-12"></div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 mb-12 scroll-reveal">
+                    <div class="lg:w-1/2 lg:text-left lg:pl-12">
+                        <div class="bg-white rounded-2xl p-6 card-shadow border border-gray-100">
+                            <span class="inline-block px-4 py-2 bg-blue-50 text-primary rounded-full text-sm mb-4 font-medium">LEVEL 2</span>
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">초급반</h3>
+                            <p class="text-gray-600 mb-4">기본기를 다지고 실력을 향상시키는 과정</p>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>• 바레 코드 마스터</li>
+                                <li>• 다양한 리듬 패턴</li>
+                                <li>• 펜타토닉 스케일 입문</li>
+                                <li>• 밴드 합주 기초</li>
+                            </ul>
+                            <div class="mt-4 text-primary font-bold">3개월 과정</div>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 level-badge rounded-full flex items-center justify-center text-xl font-bold z-10 text-white hidden lg:flex shadow-lg">2</div>
+                    <div class="lg:w-1/2 lg:pr-12"></div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-12 scroll-reveal">
+                    <div class="lg:w-1/2 lg:text-right lg:pr-12">
+                        <div class="bg-white rounded-2xl p-6 card-shadow border border-gray-100">
+                            <span class="inline-block px-4 py-2 bg-blue-50 text-primary rounded-full text-sm mb-4 font-medium">LEVEL 3</span>
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">중급반</h3>
+                            <p class="text-gray-600 mb-4">테크닉과 음악적 표현력을 키우는 과정</p>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>• 해머온/풀오프/슬라이드</li>
+                                <li>• 메이저/마이너 스케일</li>
+                                <li>• 이펙터 사용법</li>
+                                <li>• 즉흥 연주 입문</li>
+                            </ul>
+                            <div class="mt-4 text-primary font-bold">6개월 과정</div>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 level-badge rounded-full flex items-center justify-center text-xl font-bold z-10 text-white hidden lg:flex shadow-lg">3</div>
+                    <div class="lg:w-1/2 lg:pl-12"></div>
+                </div>
+
+                <!-- Level 4 -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 scroll-reveal">
+                    <div class="lg:w-1/2 lg:text-left lg:pl-12">
+                        <div class="bg-white rounded-2xl p-6 card-shadow border border-gray-100 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-sm font-bold rounded-bl-xl">PRO</div>
+                            <span class="inline-block px-4 py-2 bg-amber-50 text-amber-700 rounded-full text-sm mb-4 font-medium">LEVEL 4</span>
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">고급반 / 프로반</h3>
+                            <p class="text-gray-600 mb-4">전문 뮤지션을 위한 심화 과정</p>
+                            <ul class="text-gray-700 space-y-2">
+                                <li>• 고급 테크닉 (스위프, 탭핑 등)</li>
+                                <li>• 모드 스케일 & 음악 이론</li>
+                                <li>• 작곡 및 편곡</li>
+                                <li>• 레코딩 & 공연 실습</li>
+                            </ul>
+                            <div class="mt-4 gradient-text-gold font-bold">6개월+ 과정</div>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center text-xl font-bold z-10 text-white hidden lg:flex shadow-lg">4</div>
+                    <div class="lg:w-1/2 lg:pr-12"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm mb-4 font-medium">GALLERY</span>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800">
+                    시설 <span class="gradient-text">갤러리</span>
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    최신 장비와 쾌적한 환경에서<br>
+                    즐거운 음악 생활을 시작하세요
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery Items -->
+                <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group scroll-reveal card-shadow">
+                    <div class="w-full h-full min-h-[300px] bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="text-6xl">🎸</span>
+                            <p class="mt-2 text-lg font-bold text-gray-700">메인 연습실</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-bold">최신 앰프와 이펙터가 구비된 메인 연습실</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden relative group scroll-reveal card-shadow">
+                    <div class="w-full h-full min-h-[150px] bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
+                        <span class="text-4xl">🎛️</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm">레코딩 스튜디오</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden relative group scroll-reveal card-shadow">
+                    <div class="w-full h-full min-h-[150px] bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                        <span class="text-4xl">🎤</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm">합주실</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden relative group scroll-reveal card-shadow">
+                    <div class="w-full h-full min-h-[150px] bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                        <span class="text-4xl">🎵</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm">개인 연습실</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden relative group scroll-reveal card-shadow">
+                    <div class="w-full h-full min-h-[150px] bg-gradient-to-br from-rose-100 to-rose-200 flex items-center justify-center">
+                        <span class="text-4xl">☕</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm">라운지</p>
+                    </div>
+                </div>
+
+                <div class="col-span-2 rounded-2xl overflow-hidden relative group scroll-reveal card-shadow">
+                    <div class="w-full h-full min-h-[150px] bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="text-4xl">🎪</span>
+                            <p class="mt-2 font-bold text-gray-700">공연 무대</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm">정기 공연 및 발표회가 열리는 무대</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm mb-4 font-medium">PRICING</span>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800">
+                    수강료 <span class="gradient-text">안내</span>
+                </h2>
+                <div class="section-divider mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic -->
+                <div class="bg-white rounded-3xl p-8 card-shadow scroll-reveal border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">기본반</h3>
+                    <p class="text-gray-500 mb-6">입문자를 위한 기초 과정</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black gradient-text">월 15만원</span>
+                        <span class="text-gray-400">/4회</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <span class="text-primary font-bold">✓</span> 주 1회 50분 레슨
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <span class="text-primary font-bold">✓</span> 기본 악보 제공
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <span class="text-primary font-bold">✓</span> 연습실 무료 이용
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-3 rounded-full btn-outline font-medium">
+                        상담 신청
+                    </a>
+                </div>
+
+                <!-- Premium -->
+                <div class="bg-white rounded-3xl p-8 card-shadow scroll-reveal relative overflow-hidden border-2 border-primary" style="animation-delay: 0.2s;">
+                    <div class="absolute top-0 left-0 right-0 py-2 bg-gradient-to-r from-primary to-primary-light text-center text-sm font-bold text-white">
+                        BEST
+                    </div>
+                    <div class="pt-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">프리미엄반</h3>
+                        <p class="text-gray-500 mb-6">집중적인 실력 향상</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-black gradient-text">월 25만원</span>
+                            <span class="text-gray-400">/4회</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="text-primary font-bold">✓</span> 주 1회 80분 레슨
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="text-primary font-bold">✓</span> 맞춤 악보 제작
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="text-primary font-bold">✓</span> 연습실 무제한 이용
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="text-primary font-bold">✓</span> 합주 수업 참여
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <span class="text-primary font-bold">✓</span> 정기 공연 참여
+                            </li>
+                        </ul>
+                        <a href="#contact" class="btn-primary block text-center py-3 rounded-full font-bold text-white">
+                            상담 신청
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pro -->
+                <div class="bg-white rounded-3xl p-8 card-shadow scroll-reveal border border-gray-100" style="animation-delay: 0.4s;">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">프로반</h3>
+                    <p class="text-gray-500 mb-6">전문 뮤지션 과정</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black gradient-text-gold">월 40만원</span>
+                        <span class="text-gray-400">/4회</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <span class="text-accent font-bold">✓</span> 주 1회 100분 레슨
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <span class="text-accent font-bold">✓</span> 프리미엄 전 혜택
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <span class="text-accent font-bold">✓</span> 레코딩 세션 참여
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <span class="text-accent font-bold">✓</span> 프로 뮤지션 멘토링
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-3 rounded-full border-2 border-accent text-accent hover:bg-accent hover:text-white transition-all font-medium">
+                        상담 신청
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm mb-4 font-medium">REVIEWS</span>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800">
+                    수강생 <span class="gradient-text">후기</span>
+                </h2>
+                <div class="section-divider mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 card-shadow scroll-reveal border border-gray-100">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"완전 초보로 시작해서 6개월 만에 밴드 합주까지! 체계적인 커리큘럼 덕분에 빠르게 성장할 수 있었어요."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center text-white font-bold">J</div>
+                        <div>
+                            <div class="font-bold text-gray-800">김준혁</div>
+                            <div class="text-gray-500 text-sm">6개월 수강</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 card-shadow scroll-reveal border border-gray-100" style="animation-delay: 0.2s;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"강사님들이 정말 친절하고 실력이 뛰어나세요. 정기 공연 경험도 너무 좋았어요. 강추합니다!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center text-white font-bold">S</div>
+                        <div>
+                            <div class="font-bold text-gray-800">이수민</div>
+                            <div class="text-gray-500 text-sm">1년 수강</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 card-shadow scroll-reveal border border-gray-100" style="animation-delay: 0.4s;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-amber-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"시설이 너무 좋고, 악기도 다 빌려주셔서 초기 비용 부담 없이 시작할 수 있었어요. 최고!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold">P</div>
+                        <div>
+                            <div class="font-bold text-gray-800">박지영</div>
+                            <div class="text-gray-500 text-sm">3개월 수강</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm mb-4 font-medium">CONTACT</span>
+                <h2 class="text-4xl md:text-5xl font-black mb-4 text-gray-800">
+                    상담 <span class="gradient-text">문의</span>
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg">
+                    지금 바로 무료 상담을 신청하세요!
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-3xl p-8 card-shadow scroll-reveal border border-gray-100">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-700">이름</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all" placeholder="홍길동">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-700">연락처</label>
+                            <input type="tel" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all" placeholder="010-1234-5678">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-700">관심 과정</label>
+                            <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all">
+                                <option>입문반</option>
+                                <option>초급반</option>
+                                <option>중급반</option>
+                                <option>고급반 / 프로반</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-700">문의 내용</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all resize-none" placeholder="궁금하신 점을 자유롭게 적어주세요"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full py-4 rounded-xl font-bold text-lg text-white">
+                            무료 상담 신청하기
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8 scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center text-2xl flex-shrink-0 text-white">
+                            📍
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1 text-gray-800">오시는 길</h3>
+                            <p class="text-gray-600">서울시 강남구 테헤란로 123<br>록스타 빌딩 5층</p>
+                            <p class="text-primary text-sm mt-1 font-medium">강남역 3번 출구 도보 5분</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center text-2xl flex-shrink-0 text-white">
+                            📞
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1 text-gray-800">전화 문의</h3>
+                            <p class="text-gray-600">02-1234-5678</p>
+                            <p class="text-primary text-sm mt-1 font-medium">평일 10:00 - 22:00 / 주말 12:00 - 18:00</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center text-2xl flex-shrink-0 text-white">
+                            💬
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1 text-gray-800">카카오톡 상담</h3>
+                            <p class="text-gray-600">@rockstar_guitar</p>
+                            <p class="text-primary text-sm mt-1 font-medium">24시간 문의 가능</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="pt-8 border-t border-gray-200">
+                        <h3 class="font-bold mb-4 text-gray-800">SNS에서 만나요</h3>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-primary/10 transition-colors">📸</a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-primary/10 transition-colors">▶️</a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-primary/10 transition-colors">🎵</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-200 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🎸</span>
+                    <span class="text-2xl font-black gradient-text">ROCKSTAR</span>
+                </div>
+
+                <p class="text-gray-500 text-center">
+                    © 2026 ROCKSTAR Guitar Academy. All rights reserved.
+                </p>
+
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">개인정보처리방침</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">이용약관</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        // Scroll Reveal Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>

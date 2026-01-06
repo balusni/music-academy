@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소리의 숲 실용음악학원 - 테마 갤러리</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <h1 class="text-2xl font-bold text-gray-800">소리의 숲 실용음악학원</h1>
+            <p class="text-gray-500 text-sm mt-1">테마 갤러리 - 8가지 스타일의 랜딩 페이지</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">
+                <span class="gradient-text">테마 선택</span>
+            </h2>
+            <p class="text-gray-600 text-lg">다양한 스타일의 실용음악학원 랜딩 페이지를 확인해보세요</p>
+        </div>
+
+        <!-- Theme Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Theme 1: Modern -->
+            <a href="theme1-modern/index.html" class="card-hover">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-12 h-12 mx-auto mb-2 border-2 border-white rounded-lg"></div>
+                            <span class="text-white text-sm font-light tracking-wider">MODERN</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-800 mb-2">모던 스타일</h3>
+                        <p class="text-gray-500 text-sm">깔끔하고 세련된 미니멀 디자인. 충분한 여백과 단순한 색상 팔레트.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="w-4 h-4 rounded-full bg-gray-900"></span>
+                            <span class="w-4 h-4 rounded-full bg-white border border-gray-300"></span>
+                            <span class="w-4 h-4 rounded-full bg-blue-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Theme 2: Animated -->
+            <a href="theme2-animated/index.html" class="card-hover">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-30">
+                            <div class="absolute top-4 left-4 w-8 h-8 border-2 border-white rounded-full animate-ping"></div>
+                            <div class="absolute bottom-4 right-4 w-6 h-6 border-2 border-white rounded-full animate-bounce"></div>
+                        </div>
+                        <span class="text-white text-sm font-bold tracking-wider z-10">ANIMATED</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-800 mb-2">힙한 애니메이션</h3>
+                        <p class="text-gray-500 text-sm">다양한 애니메이션과 인터랙션. 스크롤 효과와 마우스 반응.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="w-4 h-4 rounded-full bg-purple-600"></span>
+                            <span class="w-4 h-4 rounded-full bg-pink-500"></span>
+                            <span class="w-4 h-4 rounded-full bg-orange-400"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Theme 3: Bright -->
+            <a href="theme3-bright/index.html" class="card-hover">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-br from-yellow-300 via-orange-300 to-pink-300 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-12 h-12 mx-auto mb-2 bg-white rounded-full flex items-center justify-center">
+                                <span class="text-2xl">☀️</span>
+                            </div>
+                            <span class="text-gray-800 text-sm font-bold tracking-wider">BRIGHT</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-800 mb-2">밝은 스타일</h3>
+                        <p class="text-gray-500 text-sm">따뜻하고 활기찬 분위기. 밝은 색상과 친근한 느낌.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="w-4 h-4 rounded-full bg-yellow-400"></span>
+                            <span class="w-4 h-4 rounded-full bg-orange-400"></span>
+                            <span class="w-4 h-4 rounded-full bg-pink-400"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Theme 4: Dark -->
+            <a href="theme4-dark/index.html" class="card-hover">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,215,0,0.1),transparent_70%)]"></div>
+                        <span class="text-amber-400 text-sm font-bold tracking-wider">DARK</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-800 mb-2">어두운 스타일</h3>
+                        <p class="text-gray-500 text-sm">프리미엄하고 고급스러운 다크 테마. 글래스모피즘 효과.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="w-4 h-4 rounded-full bg-gray-900"></span>
+                            <span class="w-4 h-4 rounded-full bg-gray-700"></span>
+                            <span class="w-4 h-4 rounded-full bg-amber-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Theme 5: Traditional -->
+            <a href="theme5-traditional/index.html" class="card-hover">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 flex items-center justify-center">
+                        <div class="text-center border-2 border-amber-400 px-6 py-3">
+                            <span class="text-amber-400 text-sm font-serif tracking-wider">TRADITIONAL</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-800 mb-2">전통적인 스타일</h3>
+                        <p class="text-gray-500 text-sm">클래식하고 신뢰감 있는 디자인. 정보 중심 레이아웃.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="w-4 h-4 rounded-full bg-blue-900"></span>
+                            <span class="w-4 h-4 rounded-full bg-amber-600"></span>
+                            <span class="w-4 h-4 rounded-full bg-cream-100 border border-gray-300"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Theme 6: Minimalist -->
+            <a href="theme6-minimalist/index.html" class="card-hover">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-white flex items-center justify-center border-b">
+                        <div class="text-center">
+                            <div class="w-1 h-12 bg-red-500 mx-auto mb-3"></div>
+                            <span class="text-gray-900 text-sm font-light tracking-[0.3em]">MINIMAL</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-800 mb-2">미니멀리스트</h3>
+                        <p class="text-gray-500 text-sm">극도로 단순한 디자인. 흑백 기반에 단일 포인트 컬러.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="w-4 h-4 rounded-full bg-black"></span>
+                            <span class="w-4 h-4 rounded-full bg-white border border-gray-300"></span>
+                            <span class="w-4 h-4 rounded-full bg-red-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Theme 7: Retro -->
+            <a href="theme7-retro/index.html" class="card-hover">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-br from-amber-600 via-orange-500 to-amber-700 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-12 h-12 mx-auto mb-2 rounded-full border-4 border-amber-200 bg-amber-800"></div>
+                            <span class="text-amber-100 text-sm font-bold tracking-wider" style="font-family: serif;">RETRO</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-800 mb-2">레트로/빈티지</h3>
+                        <p class="text-gray-500 text-sm">70-80년대 감성. 따뜻한 톤과 빈티지 타이포그래피.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="w-4 h-4 rounded-full bg-amber-700"></span>
+                            <span class="w-4 h-4 rounded-full bg-orange-600"></span>
+                            <span class="w-4 h-4 rounded-full bg-green-700"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Theme 8: Neon -->
+            <a href="theme8-neon/index.html" class="card-hover">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0">
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-pink-500 rounded-full blur-3xl opacity-30"></div>
+                            <div class="absolute top-1/4 right-1/4 w-20 h-20 bg-cyan-400 rounded-full blur-2xl opacity-30"></div>
+                        </div>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-cyan-400 text-sm font-bold tracking-wider z-10">NEON</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-gray-800 mb-2">네온/그라디언트</h3>
+                        <p class="text-gray-500 text-sm">사이버펑크 느낌. 네온 글로우와 화려한 그라디언트.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="w-4 h-4 rounded-full bg-purple-900"></span>
+                            <span class="w-4 h-4 rounded-full bg-pink-500"></span>
+                            <span class="w-4 h-4 rounded-full bg-cyan-400"></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Info Section -->
+        <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">프로젝트 정보</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-2">공통 콘텐츠</h4>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• 학원명: 소리의 숲 실용음악학원</li>
+                        <li>• Hero 섹션 (슬로건, CTA)</li>
+                        <li>• 학원 소개 (About)</li>
+                        <li>• 수업 트랙 (보컬, 기타, 드럼, 피아노, 작곡)</li>
+                        <li>• 강사 소개 (4명)</li>
+                        <li>• 차별점/특징</li>
+                        <li>• 수강생 후기</li>
+                        <li>• 연락처 및 위치</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-2">기술 스택</h4>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• HTML5</li>
+                        <li>• Tailwind CSS (CDN)</li>
+                        <li>• Google Fonts (Noto Sans KR)</li>
+                        <li>• Vanilla JavaScript (애니메이션 테마)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">실용음악학원 랜딩 페이지 테마 갤러리</p>
+            <p class="text-xs mt-2">8가지 스타일로 보는 같은 콘텐츠, 다른 느낌</p>
+        </div>
+    </footer>
+</body>
+</html>

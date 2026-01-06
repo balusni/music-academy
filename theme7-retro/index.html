@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소리의 숲 실용음악학원 - 당신의 음악적 꿈을 현실로</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Noto+Serif+KR:wght@400;700;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mustard: '#D4A017',
+                        'mustard-dark': '#B8860B',
+                        'burnt-orange': '#CC5500',
+                        'burnt-orange-light': '#E07020',
+                        olive: '#6B8E23',
+                        'olive-dark': '#556B2F',
+                        brown: '#8B4513',
+                        'brown-dark': '#5D3A1A',
+                        cream: '#FDF5E6',
+                        'cream-dark': '#F5E6D3',
+                        terracotta: '#E2725B',
+                        'terracotta-dark': '#C65D46',
+                        beige: '#F5DEB3',
+                        tan: '#D2B48C',
+                    },
+                    fontFamily: {
+                        'retro': ['Playfair Display', 'Noto Serif KR', 'serif'],
+                        'vintage': ['Libre Baskerville', 'Noto Serif KR', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Retro Pattern Backgrounds */
+        .retro-pattern-1 {
+            background-image:
+                radial-gradient(circle at 25% 25%, rgba(212, 160, 23, 0.1) 2%, transparent 2%),
+                radial-gradient(circle at 75% 75%, rgba(204, 85, 0, 0.1) 2%, transparent 2%);
+            background-size: 30px 30px;
+        }
+
+        .retro-pattern-2 {
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(139, 69, 19, 0.05) 10px,
+                rgba(139, 69, 19, 0.05) 20px
+            );
+        }
+
+        .wave-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23D4A017' fill-opacity='0.1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+        .vinyl-record {
+            background: conic-gradient(
+                from 0deg,
+                #1a1a1a 0deg,
+                #2a2a2a 10deg,
+                #1a1a1a 20deg,
+                #2a2a2a 30deg,
+                #1a1a1a 40deg,
+                #2a2a2a 50deg,
+                #1a1a1a 60deg,
+                #2a2a2a 70deg,
+                #1a1a1a 80deg,
+                #2a2a2a 90deg,
+                #1a1a1a 100deg,
+                #2a2a2a 110deg,
+                #1a1a1a 120deg,
+                #2a2a2a 130deg,
+                #1a1a1a 140deg,
+                #2a2a2a 150deg,
+                #1a1a1a 160deg,
+                #2a2a2a 170deg,
+                #1a1a1a 180deg,
+                #2a2a2a 190deg,
+                #1a1a1a 200deg,
+                #2a2a2a 210deg,
+                #1a1a1a 220deg,
+                #2a2a2a 230deg,
+                #1a1a1a 240deg,
+                #2a2a2a 250deg,
+                #1a1a1a 260deg,
+                #2a2a2a 270deg,
+                #1a1a1a 280deg,
+                #2a2a2a 290deg,
+                #1a1a1a 300deg,
+                #2a2a2a 310deg,
+                #1a1a1a 320deg,
+                #2a2a2a 330deg,
+                #1a1a1a 340deg,
+                #2a2a2a 350deg,
+                #1a1a1a 360deg
+            );
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .vinyl-record::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 35%;
+            height: 35%;
+            background: linear-gradient(135deg, #D4A017, #CC5500);
+            border-radius: 50%;
+        }
+
+        .vinyl-record::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10%;
+            height: 10%;
+            background: #1a1a1a;
+            border-radius: 50%;
+        }
+
+        .retro-btn {
+            position: relative;
+            border: 3px solid #5D3A1A;
+            box-shadow:
+                4px 4px 0 #5D3A1A,
+                inset 0 2px 4px rgba(255,255,255,0.3);
+            transition: all 0.2s ease;
+        }
+
+        .retro-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow:
+                2px 2px 0 #5D3A1A,
+                inset 0 2px 4px rgba(255,255,255,0.3);
+        }
+
+        .retro-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow:
+                0 0 0 #5D3A1A,
+                inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .vintage-card {
+            background: linear-gradient(145deg, #FDF5E6, #F5DEB3);
+            border: 3px solid #8B4513;
+            box-shadow:
+                8px 8px 0 rgba(139, 69, 19, 0.3),
+                inset 0 0 20px rgba(139, 69, 19, 0.05);
+        }
+
+        .vintage-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .groovy-text {
+            text-shadow:
+                2px 2px 0 #CC5500,
+                4px 4px 0 #8B4513;
+        }
+
+        .retro-border {
+            border: 4px double #8B4513;
+        }
+
+        .starburst {
+            background:
+                linear-gradient(0deg, transparent 44%, #D4A017 45%, #D4A017 55%, transparent 56%),
+                linear-gradient(60deg, transparent 44%, #D4A017 45%, #D4A017 55%, transparent 56%),
+                linear-gradient(120deg, transparent 44%, #D4A017 45%, #D4A017 55%, transparent 56%);
+        }
+
+        .instructor-frame {
+            border: 6px solid #8B4513;
+            box-shadow:
+                inset 0 0 0 3px #D4A017,
+                inset 0 0 0 6px #8B4513;
+        }
+
+        .seventies-stripe {
+            background: linear-gradient(
+                to right,
+                #D4A017 0%,
+                #D4A017 20%,
+                #CC5500 20%,
+                #CC5500 40%,
+                #6B8E23 40%,
+                #6B8E23 60%,
+                #8B4513 60%,
+                #8B4513 80%,
+                #E2725B 80%,
+                #E2725B 100%
+            );
+            height: 8px;
+        }
+
+        .retro-underline {
+            position: relative;
+        }
+
+        .retro-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, #D4A017, #CC5500, #D4A017);
+            border-radius: 2px;
+        }
+
+        .cassette-tape {
+            background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+            border: 2px solid #4a4a4a;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .cassette-tape::before,
+        .cassette-tape::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #3a3a3a;
+            border-radius: 50%;
+            border: 3px solid #5a5a5a;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .cassette-tape::before {
+            left: 20%;
+        }
+
+        .cassette-tape::after {
+            right: 20%;
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 8s linear infinite;
+        }
+
+        .wavy-border-top {
+            border-top: 4px wavy #8B4513;
+        }
+
+        .testimonial-quote {
+            position: relative;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            color: #D4A017;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            opacity: 0.5;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FDF5E6;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#D4A017, #CC5500);
+            border-radius: 6px;
+            border: 2px solid #FDF5E6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-vintage bg-cream text-brown-dark">
+    <!-- Header/Navigation -->
+    <header class="bg-brown sticky top-0 z-50 shadow-lg">
+        <div class="seventies-stripe"></div>
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center gap-3">
+                    <div class="vinyl-record w-12 h-12 animate-spin-slow"></div>
+                    <span class="font-retro text-2xl font-bold text-cream">소리의 숲</span>
+                </a>
+                <ul class="hidden md:flex gap-8 text-cream font-retro">
+                    <li><a href="#about" class="hover:text-mustard transition-colors">소개</a></li>
+                    <li><a href="#courses" class="hover:text-mustard transition-colors">수업 트랙</a></li>
+                    <li><a href="#instructors" class="hover:text-mustard transition-colors">강사진</a></li>
+                    <li><a href="#features" class="hover:text-mustard transition-colors">차별점</a></li>
+                    <li><a href="#testimonials" class="hover:text-mustard transition-colors">수강후기</a></li>
+                    <li><a href="#contact" class="hover:text-mustard transition-colors">오시는 길</a></li>
+                </ul>
+                <a href="#contact" class="retro-btn bg-mustard text-brown-dark px-5 py-2 rounded-full font-retro font-bold hover:bg-mustard-dark">
+                    상담 신청
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-cream via-beige to-tan overflow-hidden retro-pattern-1">
+        <div class="vintage-texture"></div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 vinyl-record opacity-20 animate-spin-slow"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 vinyl-record opacity-15 animate-spin-slow"></div>
+
+        <!-- Retro Sunburst Background -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-[800px] h-[800px] opacity-10">
+                <svg viewBox="0 0 400 400" class="w-full h-full">
+                    <g fill="#CC5500">
+                        <polygon points="200,200 180,0 220,0"/>
+                        <polygon points="200,200 220,400 180,400"/>
+                        <polygon points="200,200 0,180 0,220"/>
+                        <polygon points="200,200 400,220 400,180"/>
+                        <polygon points="200,200 127,27 156,18"/>
+                        <polygon points="200,200 273,373 244,382"/>
+                        <polygon points="200,200 27,273 18,244"/>
+                        <polygon points="200,200 373,127 382,156"/>
+                        <polygon points="200,200 54,127 73,102"/>
+                        <polygon points="200,200 346,273 327,298"/>
+                        <polygon points="200,200 127,346 102,327"/>
+                        <polygon points="200,200 273,54 298,73"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-24 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1 text-center lg:text-left">
+                    <div class="inline-block bg-burnt-orange text-cream px-6 py-2 rounded-full font-retro text-sm mb-6 border-2 border-brown">
+                        Since 2010
+                    </div>
+                    <h1 class="font-retro text-5xl md:text-7xl font-black text-brown mb-6 groovy-text leading-tight">
+                        소리의 숲<br/>
+                        <span class="text-burnt-orange">실용음악학원</span>
+                    </h1>
+                    <p class="font-retro text-3xl md:text-4xl text-olive-dark mb-4 italic">
+                        "당신의 음악적 꿈을 현실로"
+                    </p>
+                    <p class="text-xl text-brown mb-8 max-w-lg mx-auto lg:mx-0 bg-cream/50 p-4 rounded-2xl border-2 border-mustard">
+                        프로 뮤지션이 직접 가르치는 1:1 맞춤 레슨
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="retro-btn bg-terracotta text-cream px-8 py-4 rounded-full font-retro text-lg font-bold">
+                            무료 상담 신청
+                        </a>
+                        <a href="#courses" class="retro-btn bg-olive text-cream px-8 py-4 rounded-full font-retro text-lg font-bold">
+                            수업 둘러보기
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex justify-center">
+                    <!-- Vintage Microphone Illustration -->
+                    <div class="relative">
+                        <div class="w-72 h-72 md:w-96 md:h-96 vinyl-record animate-spin-slow shadow-2xl"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                            <div class="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-mustard to-burnt-orange rounded-full flex items-center justify-center shadow-lg">
+                                <svg class="w-12 h-12 md:w-16 md:h-16 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5z"/>
+                                    <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Bottom -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#8B4513"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-brown text-cream relative overflow-hidden">
+        <div class="vintage-texture"></div>
+        <div class="retro-pattern-2 absolute inset-0"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-retro text-4xl md:text-5xl font-black mb-4 retro-underline inline-block">학원 소개</h2>
+                <p class="text-mustard font-retro text-xl mt-8">About Us</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1">
+                    <div class="vintage-card p-8 rounded-3xl">
+                        <p class="text-brown text-xl leading-relaxed mb-6">
+                            <span class="font-retro text-3xl text-burnt-orange">2010년</span> 설립 이후,
+                            <span class="font-bold text-olive-dark">소리의 숲 실용음악학원</span>은
+                            음악을 사랑하는 모든 분들의 꿈을 현실로 만들어 왔습니다.
+                        </p>
+                        <p class="text-brown text-xl leading-relaxed mb-8">
+                            현직 프로 뮤지션으로 구성된 강사진과 함께
+                            <span class="font-bold text-terracotta">1,500명 이상</span>의 수강생이
+                            그들만의 음악적 여정을 시작했습니다.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="text-center p-4 bg-mustard/20 rounded-2xl border-2 border-mustard">
+                                <p class="font-retro text-4xl font-black text-burnt-orange">15+</p>
+                                <p class="text-brown text-sm">년의 역사</p>
+                            </div>
+                            <div class="text-center p-4 bg-mustard/20 rounded-2xl border-2 border-mustard">
+                                <p class="font-retro text-4xl font-black text-burnt-orange">1500+</p>
+                                <p class="text-brown text-sm">수강생 배출</p>
+                            </div>
+                            <div class="text-center p-4 bg-mustard/20 rounded-2xl border-2 border-mustard">
+                                <p class="font-retro text-4xl font-black text-burnt-orange">100%</p>
+                                <p class="text-brown text-sm">프로 강사진</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex justify-center">
+                    <!-- Cassette Tape Design -->
+                    <div class="cassette-tape w-80 h-52 p-6 flex items-center justify-center">
+                        <div class="bg-cream/90 w-full h-20 rounded flex items-center justify-center">
+                            <p class="font-retro text-brown text-center">
+                                <span class="text-lg font-bold">SOUND FOREST</span><br/>
+                                <span class="text-sm">Music Academy</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-24 bg-gradient-to-b from-cream to-beige relative overflow-hidden">
+        <div class="vintage-texture"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-retro text-4xl md:text-5xl font-black text-brown mb-4 retro-underline inline-block">수업 트랙</h2>
+                <p class="text-olive-dark font-retro text-xl mt-8">Our Courses</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vocal -->
+                <div class="vintage-card rounded-3xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-20 h-20 bg-terracotta rounded-full flex items-center justify-center mb-6 mx-auto border-4 border-brown">
+                        <svg class="w-10 h-10 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold text-center text-brown mb-4">보컬</h3>
+                    <ul class="text-brown-dark space-y-2 text-center">
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            발성 트레이닝
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            호흡법
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            음정 교정
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Guitar -->
+                <div class="vintage-card rounded-3xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-20 h-20 bg-olive rounded-full flex items-center justify-center mb-6 mx-auto border-4 border-brown">
+                        <svg class="w-10 h-10 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 3H22v2h-1.59l-6.2 6.2A4.972 4.972 0 0115 14c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5c1.02 0 1.97.3 2.76.83L19.59 3zM10 17c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold text-center text-brown mb-4">기타</h3>
+                    <ul class="text-brown-dark space-y-2 text-center">
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            어쿠스틱 기타
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            일렉 기타
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            핑거스타일
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Drum -->
+                <div class="vintage-card rounded-3xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-20 h-20 bg-burnt-orange rounded-full flex items-center justify-center mb-6 mx-auto border-4 border-brown">
+                        <svg class="w-10 h-10 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="12" cy="12" r="6"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold text-center text-brown mb-4">드럼</h3>
+                    <ul class="text-brown-dark space-y-2 text-center">
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            리듬 트레이닝
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            밴드 합주
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Piano -->
+                <div class="vintage-card rounded-3xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-20 h-20 bg-mustard rounded-full flex items-center justify-center mb-6 mx-auto border-4 border-brown">
+                        <svg class="w-10 h-10 text-brown" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 5v14h18V5H3zm4 12H5v-4h2v4zm4 0H9v-4h2v4zm4 0h-2v-4h2v4zm4 0h-2v-4h2v4zM7 11H5V7h2v4zm4 0H9V7h2v4zm4 0h-2V7h2v4zm4 0h-2V7h2v4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold text-center text-brown mb-4">피아노</h3>
+                    <ul class="text-brown-dark space-y-2 text-center">
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            클래식
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            재즈
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            반주법
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Composition/MIDI -->
+                <div class="vintage-card rounded-3xl p-8 hover:transform hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="w-20 h-20 bg-brown rounded-full flex items-center justify-center mb-6 mx-auto border-4 border-mustard">
+                        <svg class="w-10 h-10 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold text-center text-brown mb-4">작곡/미디</h3>
+                    <ul class="text-brown-dark space-y-2 text-center">
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            DAW 활용
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            편곡
+                        </li>
+                        <li class="flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 bg-mustard rounded-full"></span>
+                            믹싱/마스터링
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section id="instructors" class="py-24 bg-olive-dark text-cream relative overflow-hidden">
+        <div class="vintage-texture"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-retro text-4xl md:text-5xl font-black mb-4 retro-underline inline-block">강사진 소개</h2>
+                <p class="text-mustard font-retro text-xl mt-8">Our Instructors</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Instructor 1 -->
+                <div class="text-center group">
+                    <div class="instructor-frame w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-mustard to-burnt-orange group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <span class="text-6xl text-cream">S</span>
+                        </div>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold mb-2">김서연</h3>
+                    <p class="text-mustard font-retro mb-3">보컬 담당</p>
+                    <div class="bg-brown/50 rounded-2xl p-4">
+                        <p class="text-sm">서울예대 졸업</p>
+                        <p class="text-sm">음반 참여 다수</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="text-center group">
+                    <div class="instructor-frame w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-terracotta to-burnt-orange group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <span class="text-6xl text-cream">J</span>
+                        </div>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold mb-2">박준혁</h3>
+                    <p class="text-mustard font-retro mb-3">기타 담당</p>
+                    <div class="bg-brown/50 rounded-2xl p-4">
+                        <p class="text-sm">버클리 음대 졸업</p>
+                        <p class="text-sm">세션 기타리스트</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 3 -->
+                <div class="text-center group">
+                    <div class="instructor-frame w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-olive to-olive-dark group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <span class="text-6xl text-cream">D</span>
+                        </div>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold mb-2">이동현</h3>
+                    <p class="text-mustard font-retro mb-3">드럼 담당</p>
+                    <div class="bg-brown/50 rounded-2xl p-4">
+                        <p class="text-sm">홍익대 졸업</p>
+                        <p class="text-sm">재즈 드러머</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 4 -->
+                <div class="text-center group">
+                    <div class="instructor-frame w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-brown to-brown-dark group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <span class="text-6xl text-cream">M</span>
+                        </div>
+                    </div>
+                    <h3 class="font-retro text-2xl font-bold mb-2">최민지</h3>
+                    <p class="text-mustard font-retro mb-3">작곡 담당</p>
+                    <div class="bg-brown/50 rounded-2xl p-4">
+                        <p class="text-sm">상명대 졸업</p>
+                        <p class="text-sm">K-POP 작곡가</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gradient-to-b from-tan to-cream relative overflow-hidden">
+        <div class="vintage-texture"></div>
+        <div class="retro-pattern-1 absolute inset-0"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-retro text-4xl md:text-5xl font-black text-brown mb-4 retro-underline inline-block">왜 소리의 숲인가?</h2>
+                <p class="text-olive-dark font-retro text-xl mt-8">Why Choose Us</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="flex items-start gap-6 vintage-card rounded-3xl p-6">
+                    <div class="w-16 h-16 bg-terracotta rounded-full flex-shrink-0 flex items-center justify-center border-4 border-brown">
+                        <svg class="w-8 h-8 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-retro text-xl font-bold text-brown mb-2">1:1 맞춤 커리큘럼</h3>
+                        <p class="text-brown-dark">개인의 수준과 목표에 맞춘 체계적인 커리큘럼으로 효율적인 성장을 도와드립니다.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="flex items-start gap-6 vintage-card rounded-3xl p-6">
+                    <div class="w-16 h-16 bg-mustard rounded-full flex-shrink-0 flex items-center justify-center border-4 border-brown">
+                        <svg class="w-8 h-8 text-brown" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10-4h2v2h-2zm-6 0h4v2h-4zm6 4h2v2h-2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-retro text-xl font-bold text-brown mb-2">프로급 장비 보유</h3>
+                        <p class="text-brown-dark">최신 녹음 장비와 악기로 실제 프로 현장과 동일한 환경에서 연습할 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="flex items-start gap-6 vintage-card rounded-3xl p-6">
+                    <div class="w-16 h-16 bg-olive rounded-full flex-shrink-0 flex items-center justify-center border-4 border-brown">
+                        <svg class="w-8 h-8 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-retro text-xl font-bold text-brown mb-2">정기 발표회 및 공연 기회</h3>
+                        <p class="text-brown-dark">매 분기 발표회와 다양한 공연 기회로 실전 경험을 쌓을 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="flex items-start gap-6 vintage-card rounded-3xl p-6">
+                    <div class="w-16 h-16 bg-burnt-orange rounded-full flex-shrink-0 flex items-center justify-center border-4 border-brown">
+                        <svg class="w-8 h-8 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-retro text-xl font-bold text-brown mb-2">연습실 24시간 개방</h3>
+                        <p class="text-brown-dark">언제든지 연습할 수 있는 환경으로 자유로운 음악 활동을 지원합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-brown text-cream relative overflow-hidden">
+        <div class="vintage-texture"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-retro text-4xl md:text-5xl font-black mb-4 retro-underline inline-block">수강생 후기</h2>
+                <p class="text-mustard font-retro text-xl mt-8">Testimonials</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="vintage-card rounded-3xl p-8">
+                    <div class="testimonial-quote mb-6">
+                        <p class="text-brown leading-relaxed pl-6">
+                            "처음 기타를 잡았을 때는 코드 하나도 못 잡았는데, 6개월 만에 밴드 합주까지 하게 됐어요.
+                            박준혁 선생님의 체계적인 커리큘럼 덕분입니다!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t-2 border-mustard">
+                        <div class="w-12 h-12 bg-terracotta rounded-full flex items-center justify-center">
+                            <span class="text-cream font-bold">J</span>
+                        </div>
+                        <div>
+                            <p class="font-retro font-bold text-brown">정민수</p>
+                            <p class="text-olive-dark text-sm">기타 수강 6개월</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="vintage-card rounded-3xl p-8">
+                    <div class="testimonial-quote mb-6">
+                        <p class="text-brown leading-relaxed pl-6">
+                            "보컬 레슨 받으면서 자신감이 정말 많이 생겼어요.
+                            발표회에서 노래했을 때 가족들이 정말 놀라더라고요. 감사합니다!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t-2 border-mustard">
+                        <div class="w-12 h-12 bg-olive rounded-full flex items-center justify-center">
+                            <span class="text-cream font-bold">H</span>
+                        </div>
+                        <div>
+                            <p class="font-retro font-bold text-brown">한소희</p>
+                            <p class="text-olive-dark text-sm">보컬 수강 1년</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="vintage-card rounded-3xl p-8">
+                    <div class="testimonial-quote mb-6">
+                        <p class="text-brown leading-relaxed pl-6">
+                            "작곡을 배우고 싶었는데 어디서 시작해야 할지 몰랐어요.
+                            이제는 직접 곡을 만들어 유튜브에 올리고 있습니다. 꿈같은 일이에요!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t-2 border-mustard">
+                        <div class="w-12 h-12 bg-mustard rounded-full flex items-center justify-center">
+                            <span class="text-brown font-bold">K</span>
+                        </div>
+                        <div>
+                            <p class="font-retro font-bold text-brown">김태현</p>
+                            <p class="text-olive-dark text-sm">작곡 수강 8개월</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-b from-cream to-tan relative overflow-hidden">
+        <div class="vintage-texture"></div>
+        <div class="retro-pattern-2 absolute inset-0"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-retro text-4xl md:text-5xl font-black text-brown mb-4 retro-underline inline-block">오시는 길</h2>
+                <p class="text-olive-dark font-retro text-xl mt-8">Contact Us</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Info -->
+                <div class="vintage-card rounded-3xl p-8">
+                    <h3 class="font-retro text-2xl font-bold text-brown mb-8">연락처 정보</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-terracotta rounded-full flex items-center justify-center flex-shrink-0 border-3 border-brown">
+                                <svg class="w-7 h-7 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-olive-dark text-sm">전화번호</p>
+                                <p class="font-retro text-xl font-bold text-brown">02-1234-5678</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-mustard rounded-full flex items-center justify-center flex-shrink-0 border-3 border-brown">
+                                <svg class="w-7 h-7 text-brown" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-olive-dark text-sm">주소</p>
+                                <p class="font-retro text-lg font-bold text-brown">서울시 마포구 홍대입구역 근처</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-olive rounded-full flex items-center justify-center flex-shrink-0 border-3 border-brown">
+                                <svg class="w-7 h-7 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-olive-dark text-sm">운영시간</p>
+                                <p class="font-retro text-xl font-bold text-brown">10:00 - 22:00</p>
+                                <p class="text-olive-dark text-sm">(연습실 24시간 개방)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="vintage-card rounded-3xl p-8">
+                    <h3 class="font-retro text-2xl font-bold text-brown mb-8">무료 상담 신청</h3>
+
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-brown font-retro font-bold mb-2">이름</label>
+                            <input type="text" placeholder="이름을 입력해주세요"
+                                class="w-full px-4 py-3 rounded-xl border-3 border-brown bg-cream focus:outline-none focus:border-mustard text-brown placeholder-tan">
+                        </div>
+
+                        <div>
+                            <label class="block text-brown font-retro font-bold mb-2">연락처</label>
+                            <input type="tel" placeholder="010-0000-0000"
+                                class="w-full px-4 py-3 rounded-xl border-3 border-brown bg-cream focus:outline-none focus:border-mustard text-brown placeholder-tan">
+                        </div>
+
+                        <div>
+                            <label class="block text-brown font-retro font-bold mb-2">관심 분야</label>
+                            <select class="w-full px-4 py-3 rounded-xl border-3 border-brown bg-cream focus:outline-none focus:border-mustard text-brown">
+                                <option value="">선택해주세요</option>
+                                <option value="vocal">보컬</option>
+                                <option value="guitar">기타</option>
+                                <option value="drum">드럼</option>
+                                <option value="piano">피아노</option>
+                                <option value="composition">작곡/미디</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-brown font-retro font-bold mb-2">문의 내용</label>
+                            <textarea rows="4" placeholder="문의하실 내용을 입력해주세요"
+                                class="w-full px-4 py-3 rounded-xl border-3 border-brown bg-cream focus:outline-none focus:border-mustard text-brown placeholder-tan resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="retro-btn w-full bg-terracotta text-cream py-4 rounded-full font-retro text-lg font-bold">
+                            상담 신청하기
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brown-dark text-cream py-12 relative overflow-hidden">
+        <div class="seventies-stripe mb-8"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-4">
+                    <div class="vinyl-record w-16 h-16"></div>
+                    <div>
+                        <p class="font-retro text-2xl font-bold">소리의 숲</p>
+                        <p class="text-tan text-sm">실용음악학원</p>
+                    </div>
+                </div>
+
+                <!-- SNS Links -->
+                <div class="flex gap-4">
+                    <a href="#" class="w-12 h-12 bg-mustard rounded-full flex items-center justify-center hover:bg-mustard-dark transition-colors border-2 border-cream">
+                        <svg class="w-6 h-6 text-brown" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-terracotta rounded-full flex items-center justify-center hover:bg-terracotta-dark transition-colors border-2 border-cream">
+                        <svg class="w-6 h-6 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-olive rounded-full flex items-center justify-center hover:bg-olive-dark transition-colors border-2 border-cream">
+                        <svg class="w-6 h-6 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-burnt-orange rounded-full flex items-center justify-center hover:bg-burnt-orange-light transition-colors border-2 border-cream">
+                        <svg class="w-6 h-6 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-tan/30 mt-8 pt-8 text-center">
+                <p class="text-tan text-sm">
+                    &copy; 2024 소리의 숲 실용음악학원. All rights reserved.
+                </p>
+                <p class="text-tan/60 text-xs mt-2">
+                    서울시 마포구 홍대입구역 근처 | 02-1234-5678
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-8 right-8 w-14 h-14 bg-terracotta text-cream rounded-full shadow-lg flex items-center justify-center hover:bg-terracotta-dark transition-colors border-3 border-brown z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소리의 숲 실용음악학원</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#E53935'
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-black/10">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-lg font-medium tracking-tight">소리의 숲</a>
+            <div class="hidden md:flex gap-10 text-sm font-light">
+                <a href="#about" class="hover:text-accent transition-colors">소개</a>
+                <a href="#courses" class="hover:text-accent transition-colors">수업</a>
+                <a href="#instructors" class="hover:text-accent transition-colors">강사진</a>
+                <a href="#contact" class="hover:text-accent transition-colors">문의</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6">
+        <div class="max-w-4xl text-center">
+            <p class="text-accent text-sm tracking-widest uppercase mb-8">Music Academy</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8">
+                당신의 음악적 꿈을<br>현실로
+            </h1>
+            <p class="text-lg md:text-xl font-light text-gray-600 mb-16 max-w-xl mx-auto">
+                프로 뮤지션이 직접 가르치는 1:1 맞춤 레슨
+            </p>
+            <a href="#contact" class="inline-block border border-black px-10 py-4 text-sm tracking-wider hover:bg-black hover:text-white transition-all duration-300">
+                무료 상담 신청
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 border-t border-black/10">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-accent text-sm tracking-widest uppercase mb-6">About</p>
+            <h2 class="text-3xl md:text-4xl font-light mb-16">소리의 숲 실용음악학원</h2>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        2010년 설립 이후 1,500명 이상의 수강생을 배출하며
+                        실용음악 교육의 새로운 기준을 만들어가고 있습니다.
+                    </p>
+                </div>
+                <div>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        현직에서 활동 중인 프로 뮤지션 강사진이
+                        여러분의 음악적 성장을 함께합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-8 mt-24 pt-16 border-t border-black/10">
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-light mb-2">15+</p>
+                    <p class="text-sm text-gray-500 font-light">Years</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-light mb-2">1,500+</p>
+                    <p class="text-sm text-gray-500 font-light">Students</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-light mb-2">20+</p>
+                    <p class="text-sm text-gray-500 font-light">Instructors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-32 px-6 bg-black text-white">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-accent text-sm tracking-widest uppercase mb-6">Courses</p>
+            <h2 class="text-3xl md:text-4xl font-light mb-20">수업 트랙</h2>
+
+            <div class="space-y-0">
+                <!-- Vocal -->
+                <div class="py-8 border-b border-white/20 group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-light mb-3 group-hover:text-accent transition-colors">보컬</h3>
+                            <p class="text-gray-400 font-light">발성, 호흡, 음정 교정</p>
+                        </div>
+                        <span class="text-gray-500 text-sm">01</span>
+                    </div>
+                </div>
+
+                <!-- Guitar -->
+                <div class="py-8 border-b border-white/20 group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-light mb-3 group-hover:text-accent transition-colors">기타</h3>
+                            <p class="text-gray-400 font-light">어쿠스틱, 일렉, 핑거스타일</p>
+                        </div>
+                        <span class="text-gray-500 text-sm">02</span>
+                    </div>
+                </div>
+
+                <!-- Drum -->
+                <div class="py-8 border-b border-white/20 group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-light mb-3 group-hover:text-accent transition-colors">드럼</h3>
+                            <p class="text-gray-400 font-light">리듬 트레이닝, 밴드 합주</p>
+                        </div>
+                        <span class="text-gray-500 text-sm">03</span>
+                    </div>
+                </div>
+
+                <!-- Piano -->
+                <div class="py-8 border-b border-white/20 group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-light mb-3 group-hover:text-accent transition-colors">피아노</h3>
+                            <p class="text-gray-400 font-light">클래식, 재즈, 반주법</p>
+                        </div>
+                        <span class="text-gray-500 text-sm">04</span>
+                    </div>
+                </div>
+
+                <!-- Composition -->
+                <div class="py-8 border-b border-white/20 group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-light mb-3 group-hover:text-accent transition-colors">작곡/미디</h3>
+                            <p class="text-gray-400 font-light">DAW, 편곡, 믹싱</p>
+                        </div>
+                        <span class="text-gray-500 text-sm">05</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section id="instructors" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-accent text-sm tracking-widest uppercase mb-6">Instructors</p>
+            <h2 class="text-3xl md:text-4xl font-light mb-20">강사진</h2>
+
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-16">
+                <!-- Instructor 1 -->
+                <div class="border-t border-black/10 pt-8">
+                    <p class="text-accent text-xs tracking-wider mb-4">VOCAL</p>
+                    <h3 class="text-2xl font-light mb-3">김서연</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        서울예대 졸업<br>
+                        음반 참여 다수
+                    </p>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="border-t border-black/10 pt-8">
+                    <p class="text-accent text-xs tracking-wider mb-4">GUITAR</p>
+                    <h3 class="text-2xl font-light mb-3">박준혁</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        버클리 음대 졸업<br>
+                        세션 기타리스트
+                    </p>
+                </div>
+
+                <!-- Instructor 3 -->
+                <div class="border-t border-black/10 pt-8">
+                    <p class="text-accent text-xs tracking-wider mb-4">DRUM</p>
+                    <h3 class="text-2xl font-light mb-3">이동현</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        홍익대 졸업<br>
+                        재즈 드러머
+                    </p>
+                </div>
+
+                <!-- Instructor 4 -->
+                <div class="border-t border-black/10 pt-8">
+                    <p class="text-accent text-xs tracking-wider mb-4">COMPOSITION</p>
+                    <h3 class="text-2xl font-light mb-3">최민지</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        상명대 졸업<br>
+                        K-POP 작곡가
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-32 px-6 border-t border-black/10">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-accent text-sm tracking-widest uppercase mb-6">Features</p>
+            <h2 class="text-3xl md:text-4xl font-light mb-20">차별점</h2>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-xl font-light mb-4">1:1 맞춤 커리큘럼</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        개인의 수준과 목표에 맞춘 체계적인 교육 과정을 제공합니다.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-light mb-4">프로급 장비 보유</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        최신 녹음 장비와 악기로 실전과 같은 환경을 경험하세요.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-light mb-4">정기 발표회 및 공연 기회</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        무대 경험을 통해 실력과 자신감을 함께 키울 수 있습니다.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-light mb-4">연습실 24시간 개방</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">
+                        언제든 원할 때 연습할 수 있는 환경을 제공합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-32 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-accent text-sm tracking-widest uppercase mb-6">Testimonials</p>
+            <h2 class="text-3xl md:text-4xl font-light mb-20">수강생 후기</h2>
+
+            <div class="space-y-16">
+                <!-- Testimonial 1 -->
+                <div class="border-l-2 border-black pl-8">
+                    <p class="text-xl md:text-2xl font-light leading-relaxed mb-6">
+                        "음치였던 제가 6개월 만에 노래방에서 자신있게 부를 수 있게 되었어요.
+                        김서연 선생님의 체계적인 발성 교육 덕분입니다."
+                    </p>
+                    <p class="text-gray-500 font-light">이하은 — 보컬 수강생</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="border-l-2 border-black pl-8">
+                    <p class="text-xl md:text-2xl font-light leading-relaxed mb-6">
+                        "취미로 시작했는데 이제는 밴드 활동까지 하게 됐습니다.
+                        선생님들의 실전 경험을 바탕으로 한 조언이 정말 큰 도움이 됐어요."
+                    </p>
+                    <p class="text-gray-500 font-light">정민수 — 기타 수강생</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="border-l-2 border-black pl-8">
+                    <p class="text-xl md:text-2xl font-light leading-relaxed mb-6">
+                        "작곡에 대한 막연한 꿈이 있었는데, 여기서 배우면서 실제로 곡을 완성했습니다.
+                        최고의 선택이었어요."
+                    </p>
+                    <p class="text-gray-500 font-light">박소영 — 작곡 수강생</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-accent text-sm tracking-widest uppercase mb-6">Contact</p>
+            <h2 class="text-3xl md:text-4xl font-light mb-20">문의하기</h2>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="space-y-12">
+                    <div>
+                        <p class="text-sm text-gray-400 mb-2">전화</p>
+                        <p class="text-2xl font-light">02-1234-5678</p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-400 mb-2">주소</p>
+                        <p class="text-lg font-light">서울시 마포구 홍대입구역 근처</p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-400 mb-2">운영시간</p>
+                        <p class="text-lg font-light">매일 10:00 — 22:00</p>
+                    </div>
+                </div>
+
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="이름"
+                                   class="w-full border-b border-black/20 py-4 bg-transparent focus:outline-none focus:border-accent transition-colors font-light">
+                        </div>
+                        <div>
+                            <input type="tel" placeholder="연락처"
+                                   class="w-full border-b border-black/20 py-4 bg-transparent focus:outline-none focus:border-accent transition-colors font-light">
+                        </div>
+                        <div>
+                            <select class="w-full border-b border-black/20 py-4 bg-transparent focus:outline-none focus:border-accent transition-colors font-light text-gray-500">
+                                <option value="">관심 과목 선택</option>
+                                <option value="vocal">보컬</option>
+                                <option value="guitar">기타</option>
+                                <option value="drum">드럼</option>
+                                <option value="piano">피아노</option>
+                                <option value="composition">작곡/미디</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea placeholder="문의 내용" rows="4"
+                                      class="w-full border-b border-black/20 py-4 bg-transparent focus:outline-none focus:border-accent transition-colors font-light resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                                class="w-full border border-black py-4 text-sm tracking-wider hover:bg-black hover:text-white transition-all duration-300 mt-8">
+                            상담 신청하기
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 border-t border-black/10">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                <div>
+                    <p class="text-lg font-medium mb-2">소리의 숲 실용음악학원</p>
+                    <p class="text-sm text-gray-500 font-light">당신의 음악적 꿈을 현실로</p>
+                </div>
+
+                <div class="flex gap-8">
+                    <a href="#" class="text-sm text-gray-500 hover:text-accent transition-colors font-light">Instagram</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-accent transition-colors font-light">YouTube</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-accent transition-colors font-light">Blog</a>
+                </div>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-black/10">
+                <p class="text-xs text-gray-400 font-light">
+                    &copy; 2024 소리의 숲 실용음악학원. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
